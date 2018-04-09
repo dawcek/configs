@@ -175,14 +175,15 @@ exec --no-startup-id compton --xrender-sync-fence
 exec --no-startup-id nm-applet
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 #power managment
+set $question "Are you sure?"
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
     bindsym l exec --no-startup-id i3exit lock, mode "default"
-    bindsym e exec --no-startup-id i3exit logout, mode "default"
-    bindsym s exec --no-startup-id i3exit suspend, mode "default"
-    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
-    bindsym r exec --no-startup-id i3exit reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
+    bindsym e exec --no-startup-id dcprompt $question "i3exit logout", mode "default"
+    bindsym s exec --no-startup-id dcprompt $question "i3exit suspend", mode "default"
+    bindsym h exec --no-startup-id dcprompt $question "i3exit hibernate", mode "default"
+    bindsym r exec --no-startup-id dcprompt $question "i3exit reboot", mode "default"
+    bindsym Shift+s exec --no-startup-id dcprompt $question "i3exit shutdown", mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -191,7 +192,7 @@ mode "$mode_system" {
 bindsym $mod+Delete mode "$mode_system"
 exec --no-startup-id xbacklight -set 30
 exec --no-startup-id pactl set-sink-volume 0 30%
-exec --no-startup-id xautolock -time 25 -locker 'i3lock -c 33334d'  &
+exec --no-startup-id xautolock -time 25 -locker 'betterlockscreen -l dim'  &
 exec --no-startup-id xset s 900 900 
 exec --no-startup-id udiskie -ans &
 exec --no-startup-id dunst &
