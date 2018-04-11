@@ -255,7 +255,7 @@ bindsym $mod+y exec gnome-calculator
 #bindsym $mod+Shift+y exec "urxvt -e matlab -nodesktop"
 #bindsym $mod+Shift+Return exec st -e zsh
 #set $var "urxvt -e zsh"
-bindsym $mod+Shift+Return exec urxvt -e zsh
+bindsym $mod+Shift+Return exec termite -e zsh
 #bindsym $mod+Shift+Return exec $var
 bindsym $mod+Shift+a exec pavucontrol
 #bindsym $mod+z exec morc_menu
