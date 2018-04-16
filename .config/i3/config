@@ -21,7 +21,7 @@ font pango:monospace 10
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-# The font above is very luke smithx xyzspace-efficient, that is, it looks good, sharp and
+# The font above is very space-efficient, that is, it looks good, sharp and
 # clear in small sizes. However, its unicode glyph coverage is limited, the old
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
@@ -104,8 +104,7 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
-set $ws11 "11"
-set $ws21 "21"
+
 # switch to workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
@@ -117,8 +116,7 @@ bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
-bindsym $mod+F1 workspace $ws11
-bindsym Mod1+F1 workspace $ws21
+
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
@@ -241,8 +239,8 @@ bindsym $mod+F10 exec --no-startup-id "dcdisplay"
 bindsym --release Print exec --no-startup-id scrot -e 'mv $f ~/img/screenshots/'
 bindsym --release Shift+Print exec --no-startup-id scrot -u -e 'mv $f ~/img/screenshots/'
 bindsym --release Control+Print exec --no-startup-id scrot -s -e 'mv $f ~/img/screenshots/'
-# i3-dmenu
-bindsym $mod+Shift+d exec morc_menu
+#morc_menu
+#bindsym $mod+Shift+d exec morc_menu
 #file managers:
 bindsym $mod+Shift+p exec pcmanfm
 bindsym $mod+p exec urxvt -e ranger
@@ -260,7 +258,6 @@ bindsym $mod+y exec gnome-calculator
 bindsym $mod+Shift+Return exec termite -e zsh
 #bindsym $mod+Shift+Return exec $var
 bindsym $mod+Shift+a exec pavucontrol
-#bindsym $mod+z exec morc_menu
 #hiding window into sratchpad workspace
 # move the currently focused window to the scratchpad
 bindsym $mod+Shift+minus move scratchpad
@@ -276,7 +273,7 @@ set $secondscreen VGA1
 workspace 1 output $firstscreen
 workspace 2 output $secondscreen
 workspace 3 output $firstscreen
-workspace 4 output $secondcreen
+workspace 4 output $secondscreen
 workspace 5 output $firstscreen
 workspace 6 output $secondscreen
 workspace 7 output $firstscreen
