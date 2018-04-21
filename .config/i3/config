@@ -175,7 +175,7 @@ exec --no-startup-id compton --xrender-sync-fence
 exec --no-startup-id nm-applet
 #polybar
 #exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec_always --no-startup-id polybarlaunch eDP1
+exec_always --no-startup-id polybarlaunch 
 #
 #power managment
 set $question "Are you sure?"
