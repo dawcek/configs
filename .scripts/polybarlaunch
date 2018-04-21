@@ -1,0 +1,34 @@
+#!/usr/bin/env sh
+
+# Terminate already running bar instances
+killall -q polybar
+
+# Wait until the processes have been shut down
+while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
+
+# Launch bar1 and bar2
+if [ $# -eq 0 ];
+then
+	polybar -r bar1 &
+	echo "Bar launched..."
+elif [ $# -eq 1 ];
+then
+	if [ "$1" == "eDP1" ];
+	then
+		polybar -r bar1 &
+		echo "Bar launched..."
+	elif [ "$1" == "VGA1" ];
+	then
+		polybar -r bar2 &
+		echo "Bar launched..."
+	elif [ "$1" == "both" ];
+	then
+		polybar -r bar1 &
+		polybar -r bar2 &
+		echo "Bar launched"
+	else
+		echo "You picked wrong option"
+	fi
+else
+	echo "You picked wrong option"
+fi

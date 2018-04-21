@@ -6,17 +6,17 @@ selected=$(echo -e "$options" | dmenu -i)
 case "$selected" in
 	laptop)
 		xrandr | grep 'VGA1 connected' && xrandr --output eDP1 --auto --output VGA1 --off --right-of eDP1
-		i3-msg restart
+		polybarlaunch eDP1
 		feh --bg-fill ~/.config/wall.jpg
 		;;
 	VGA_laptop)
 		xrandr | grep 'VGA1 connected' && xrandr --output eDP1 --auto --output VGA1 --auto --left-of eDP1
-		i3-msg restart
+		polybarlaunch both
 		feh --bg-fill ~/.config/wall.jpg ~/.config/wall.jpg 
 		;;
 	VGA)
 		xrandr | grep 'VGA1 connected' && xrandr --output eDP1 --off  --output VGA1  --auto
-		i3-msg restart
+		polybarlaunch VGA1
 		feh --bg-fill ~/.config/wall.jpg
 		;;
 esac

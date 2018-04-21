@@ -3,7 +3,7 @@ dclock() {
 #i3lock version
 #i3lock -c 33334d
 #betterscreenlock version
-betterlockscreen -l dim
+betterlockscreen -l
 }
 
 case "$1" in
