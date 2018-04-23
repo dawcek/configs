@@ -1,12 +1,12 @@
 "plugins:
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'dikiaap/minimalist'
+Plug 'joshdick/onedark.vim'
 call plug#end()
 "config things:
 set t_Co=256
 syntax on
-colorscheme minimalist
+colorscheme onedark
 set hlsearch
 set incsearch
 set ignorecase
