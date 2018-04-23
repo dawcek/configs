@@ -166,8 +166,8 @@ bindsym $mod+r mode "resize"
 #
 #My adds:
 for_window [class="^.*"] border pixel 3
-gaps inner 2
-gaps outer 4
+gaps inner 3
+gaps outer 3
 #exec --no-startup-id setxkbmap pl,us -option 'grp:alt_shift_toggle'
 exec --no-startup-id setxkbmap pl
 exec --no-startup-id feh --bg-fill ~/.config/wall.jpg
@@ -220,12 +220,18 @@ bindsym $mod+Shift+n exec urxvt -e nbwmon
 #gaps-settings
 smart_gaps on
 smart_borders on
-bindsym $mod+m gaps inner current set 2; gaps outer current set 4
+bindsym $mod+m gaps inner current set 3; gaps outer current set 3
+bindsym $mod+Control+m gaps inner all set 3; gaps outer all set 3
 bindsym $mod+Shift+m gaps inner current set 0; gaps outer current set 0
-bindsym $mod+comma  gaps inner current plus 2
+bindsym $mod+Shift+Control+m gaps inner all set 0; gaps outer all set 0
+bindsym $mod+comma gaps inner current plus 2
+bindsym $mod+Control+comma gaps inner all plus 2
 bindsym $mod+Shift+comma gaps inner current minus 2
+bindsym $mod+Shift+Control+comma gaps inner all minus 2
 bindsym $mod+period gaps outer current plus 2
+bindsym $mod+Control+period gaps outer all plus 2
 bindsym $mod+Shift+period gaps outer current minus 2
+bindsym $mod+Shift+Control+period gaps outer all minus 2
 #screen brightness
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
