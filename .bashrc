@@ -8,5 +8,7 @@
 alias ls='ls --color=auto'
 alias tmux='tmux -2'
 export PS1="\u@\h:\w\\$ \[$(tput sgr0)\]"
-export VISUAL="vim"
+export EDITOR="vim"
+export TERMINAL="urxvt"
+export BROWSER "firefox"
 export TERM="xterm-256color"
