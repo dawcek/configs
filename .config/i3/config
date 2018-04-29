@@ -168,15 +168,12 @@ bindsym $mod+r mode "resize"
 for_window [class="^.*"] border pixel 3
 gaps inner 3
 gaps outer 3
-#exec --no-startup-id setxkbmap pl,us -option 'grp:alt_shift_toggle'
+#
+#
 exec --no-startup-id setxkbmap pl
-exec --no-startup-id dcvga
+exec_always --no-startup-id dcvga
 exec --no-startup-id compton --xrender-sync-fence
 exec --no-startup-id nm-applet
-#
-#polybar
-#exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-#exec_always --no-startup-id polybarlaunch 
 #
 #power managment
 set $question "Are you sure?"
@@ -196,7 +193,7 @@ mode "$mode_system" {
 bindsym $mod+Escape mode "$mode_system"
 exec --no-startup-id xbacklight -set 30
 exec --no-startup-id pactl set-sink-volume 0 30%
-exec --no-startup-id xautolock -time 25 -locker 'betterlockscreen -l dim'  &
+exec --no-startup-id xautolock -time 15 -locker 'betterlockscreen -l dim'  &
 exec --no-startup-id xset s 900 900 
 exec --no-startup-id udiskie -ans &
 exec --no-startup-id dunst &
@@ -283,30 +280,22 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #d
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 bindsym $mod+XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 30% 
 #####################################################################################################
-#on/off screen
+#select display screens
 bindsym $mod+F10 exec --no-startup-id "dcdisplay"
-#bindsym $mod+F9 exec --no-startup-id "vgaoff"
+#printscreen functions
 bindsym --release Print exec --no-startup-id scrot -e 'mv $f ~/img/screenshots/'
 bindsym --release Shift+Print exec --no-startup-id scrot -u -e 'mv $f ~/img/screenshots/'
 bindsym --release Control+Print exec --no-startup-id scrot -s -e 'mv $f ~/img/screenshots/'
-#morc_menu
-#bindsym $mod+Shift+d exec morc_menu
 #file managers:
 bindsym $mod+Shift+p exec pcmanfm
 bindsym $mod+p exec urxvt -e ranger
 #editors:
 bindsym $mod+o exec urxvt -e vim
-bindsym $mod+Shift+o exec subl
-#system monitors:
-#
+#system monitor
 bindsym $mod+i exec urxvt -e htop
-#bindsym $mod+Shift+i exec gnome-system-monitor
+#calculator
 bindsym $mod+y exec gnome-calculator
-#bindsym $mod+Shift+y exec "urxvt -e matlab -nodesktop"
-#bindsym $mod+Shift+Return exec st -e zsh
-#set $var "urxvt -e zsh"
-bindsym $mod+Shift+Return exec termite -e zsh
-#bindsym $mod+Shift+Return exec $var
+#bindsym $mod+Shift+Return exec termite -e zsh
 bindsym $mod+Shift+a exec pavucontrol
 #hiding window into sratchpad workspace
 # move the currently focused window to the scratchpad
