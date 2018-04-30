@@ -1,1 +1,5 @@
-
+https://www.archlinux.org/feeds/news/ "arch linux"
+https://www.archlinux.org/feeds/packages/ "arch linux"
+https://aur.archlinux.org/rss/ "arch linux"
+#other
+https://lukesmith.xyz/rss.xml "misc"
