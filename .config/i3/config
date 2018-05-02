@@ -193,7 +193,7 @@ mode "$mode_system" {
 bindsym $mod+Escape mode "$mode_system"
 exec --no-startup-id xbacklight -set 30
 exec --no-startup-id pactl set-sink-volume 0 30%
-exec --no-startup-id xautolock -detectsleep -time 10 -locker "betterlockscreen -l" -killer "systemctl suspend" -killtime 10 &
+exec --no-startup-id xautolock -detectsleep -time 10 -locker "i3exit lock"
 exec --no-startup-id xset s 1200 1200 dpms 1200 1200 1200 
 exec --no-startup-id udiskie -ans &
 exec --no-startup-id dunst &
