@@ -1,9 +1,7 @@
 #!/bin/sh
-dclock() {
-#i3lock version
-#i3lock -c 33334d
-#betterscreenlock version
-betterlockscreen -l
+dclock() 
+{
+i3lock -e -f -u -c 33334d
 }
 
 case "$1" in
@@ -14,10 +12,10 @@ case "$1" in
         i3-msg exit
         ;;
     suspend)
-	systemctl suspend && dclock
+	dclock && systemctl suspend
         ;;
     hibernate)
-        systemctl hibernate && dclock
+        dclock && systemctl hibernate
         ;;
     reboot)
         systemctl reboot
