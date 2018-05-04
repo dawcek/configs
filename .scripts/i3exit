@@ -2,8 +2,6 @@
 dclock() 
 {
 	i3lock -e -f -u -c 33334d
-	sleep 3
-	xset dpms force off
 }
 
 case "$1" in
