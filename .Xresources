@@ -21,40 +21,39 @@ URxvt.resize-font.bigger: C-Up
 URxvt.resize-font.reset: C-Left
 URxvt.resize-font.show: C-Right
 
-! special
-*.foreground:   #f8f8f8
-*.background:   [90]#171717
-*.cursorColor:  #f8f8f8
+! ~/.Xresource
+*.foreground:   #cbe3e7
+*.background:   [90]#1e1c31
+*.cursorColor:  #fbfcfc
 
 ! black
-*.color0:       #171717
-*.color8:       #38252c
+*.color0:       #565575
+*.color8:       #100e23
 
 ! red
-*.color1:       #d81765
-*.color9:       #ff0000
+*.color1:       #ff8080
+*.color9:       #ff5458
 
 ! green
-*.color2:       #97d01a
-*.color10:      #76b639
+*.color2:       #95ffa4
+*.color10:      #62d196
 
 ! yellow
-*.color3:       #ffa800
-*.color11:      #e1a126
+*.color3:       #ffe9aa
+*.color11:      #ffb378
 
 ! blue
-*.color4:       #16b1fb
-*.color12:      #289cd5
+*.color4:       #91ddff
+*.color12:      #65b2ff
 
 ! magenta
-*.color5:       #ff2491
-*.color13:      #ff2491
+*.color5:       #c991e1
+*.color13:      #906cff
 
 ! cyan
-*.color6:       #0fdcb6
-*.color14:      #0a9b81
+*.color6:       #aaffe4
+*.color14:      #63f2f1
 
 ! white
-*.color7:       #ebebeb
-*.color15:      #f8f8f8
-
+*.color7:       #cbe3e7
+*.color15:      #a6b3cc
