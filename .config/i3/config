@@ -36,7 +36,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-#bindsym $mod+d exec dmenu_run
+# bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -209,9 +209,8 @@ for_window [instance="dropdown"] border pixel 5
 bindsym $mod+Shift+u exec urxvt -name dropdown -e tmux
 bindsym $mod+u [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
 #browser
-bindsym $mod+b exec firefox -P dcmc
-bindsym $mod+Shift+b exec firefox -private-window -profile dcmc
-#bindsym $mod+b exec firefox
+bindsym $mod+b exec firefox-esr -P dcmc
+bindsym $mod+Shift+b exec firefox-esr -private-window -profile dcmc
 #end browsers
 bindsym $mod+n exec "nm-connection-editor"
 bindsym $mod+Shift+n exec urxvt -e nbwmon
