@@ -1,12 +1,12 @@
 "plugins:
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'joshdick/onedark.vim'
+Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 call plug#end()
 "config things:
 set t_Co=256
 syntax on
-colorscheme onedark
+colorscheme challenger_deep
 set hlsearch
 set incsearch
 set ignorecase
