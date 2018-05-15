@@ -194,7 +194,7 @@ bindsym $mod+Escape mode "$mode_system"
 exec --no-startup-id xbacklight -set 30
 exec --no-startup-id pactl set-sink-volume 0 30%
 exec --no-startup-id xautolock -detectsleep -time 20 -locker "i3exit lock"
-exec --no-startup-id xset s 1800 1800 dpms 1800 1800 1800 
+exec --no-startup-id xset s 1210 1210 dpms 1210 1210 1210 
 exec --no-startup-id udiskie -ans &
 exec --no-startup-id dunst &
 exec --no-startup-id low_battery.sh &
