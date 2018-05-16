@@ -293,7 +293,8 @@ bindsym $mod+o exec urxvt -e vim
 #system monitor
 bindsym $mod+i exec urxvt -e htop
 #calculator
-bindsym $mod+y exec gnome-calculator
+bindsym $mod+y exec speedcrunch
+#bindsym $mod+y exec gnome-calculator
 #bindsym $mod+Shift+Return exec termite -e zsh
 bindsym $mod+Shift+a exec pavucontrol
 #hiding window into sratchpad workspace
