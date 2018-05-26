@@ -165,84 +165,16 @@ bindsym $mod+r mode "resize"
 #
 #
 #My adds:
-#STARTUP
+for_window [class="^.*"] border pixel 3
+gaps inner 3
+gaps outer 3
+#
+#
 exec --no-startup-id setxkbmap pl
 exec_always --no-startup-id dcvga
 exec --no-startup-id compton --xrender-sync-fence
 exec --no-startup-id nm-applet
-exec --no-startup-id xbacklight -set 30
-exec --no-startup-id pactl set-sink-volume 0 30%
-exec --no-startup-id xautolock -detectsleep -time 20 -locker "i3exit lock"
-exec --no-startup-id xset s 1210 1210 dpms 1210 1210 1210 
-exec --no-startup-id udiskie -ans &
-exec --no-startup-id dunst &
-exec --no-startup-id low_battery.sh &
-exec --no-startup-id urxvt -name dropdown -e tmux
-for_window [instance="dropdown"] floating enable
-for_window [instance="dropdown"] resize set 900 700
-for_window [instance="dropdown"] move scratchpad
-for_window [instance="dropdown"] border pixel 5
-#END_OF_STARTUP
-#APPERANCE
-for_window [class="^.*"] border pixel 3
-gaps inner 3
-gaps outer 3
-smart_gaps on
-smart_borders on
 #
-set $firstscreen eDP1
-set $secondscreen VGA1
-workspace 1 output $firstscreen
-workspace 2 output $secondscreen
-workspace 3 output $firstscreen
-workspace 4 output $secondscreen
-workspace 5 output $firstscreen
-workspace 6 output $secondscreen
-workspace 7 output $firstscreen
-workspace 8 output $secondscreen
-workspace 9 output $firstscreen
-workspace 10 output $secondscreen
-
-#END_OF_APPERANCE
-#KEY BINDINGS
-bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
-bindsym $mod+XF86MonBrightnessUp exec xbacklight -set 30% # set fixed screen brightness
-#
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increse volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease  volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
-bindsym $mod+XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 30% #set fixed value of volume
-#
-bindsym --release Print exec --no-startup-id scrot -e 'mv $f ~/img/screenshots/'
-bindsym --release Shift+Print exec --no-startup-id scrot -u -e 'mv $f ~/img/screenshots/'
-bindsym --release Control+Print exec --no-startup-id scrot -s -e 'mv $f ~/img/screenshots/'
-#
-bindsym $mod+Shift+u exec urxvt -name dropdown -e tmux
-bindsym $mod+u [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
-#
-bindsym $mod+Shift+minus move scratchpad
-bindsym $mod+minus [instance="^(?!dropdown).*$"] scratchpad show;floating disable
-#
-bindsym $mod+n exec "nm-connection-editor"
-#
-bindsym $mod+p exec "pavucontrol"
-#
-bindsym $mod+F10 exec --no-startup-id "dcdisplay"
-#
-bindsym $mod+F1 exec firefox -P dcmc
-bindsym $mod+Shift+F1 exec firefox -private-window -profile dcmc
-#
-bindsym $mod+F2 exec urxvt -e ranger
-bindsym $mod+Shift+F2 exec pcmanfm
-#
-bindsym $mod+F3 exec urxvt -e vim
-#
-bindsym $mod+F4 exec urxvt -e htop
-#
-bindsym $mod+F5 exec speedcrunch
-#
-#END_OF_KEYBINDINGS
 #power managment
 set $question "Are you sure?"
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
@@ -259,10 +191,144 @@ mode "$mode_system" {
     bindsym Escape mode "default"
 }
 bindsym $mod+Escape mode "$mode_system"
-#END_OF_POWER_MANAGMENT
+exec --no-startup-id xbacklight -set 30
+exec --no-startup-id pactl set-sink-volume 0 30%
+exec --no-startup-id xautolock -detectsleep -time 20 -locker "i3exit lock"
+exec --no-startup-id xset s 1210 1210 dpms 1210 1210 1210 
+exec --no-startup-id udiskie -ans &
+exec --no-startup-id dunst &
+exec --no-startup-id low_battery.sh &
+exec --no-startup-id urxvt -name dropdown -e tmux
+for_window [instance="dropdown"] floating enable
+for_window [instance="dropdown"] resize set 900 700
+for_window [instance="dropdown"] move scratchpad
+for_window [instance="dropdown"] border pixel 5
+#####################################################################################################
+#Keys:
+#dropdown keys
+bindsym $mod+Shift+u exec urxvt -name dropdown -e tmux
+bindsym $mod+u [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
+#browser
+bindsym $mod+b exec firefox-esr -P dcmc
+bindsym $mod+Shift+b exec firefox-esr -private-window -profile dcmc
+#end browsers
+bindsym $mod+n exec "nm-connection-editor"
+bindsym $mod+Shift+n exec urxvt -e nbwmon
+#gaps-settings
+smart_gaps on
+smart_borders on
 bindsym $mod+m gaps inner current set 3; gaps outer current set 3
+bindsym $mod+Control+m gaps inner all set 3; gaps outer all set 3
 bindsym $mod+Shift+m gaps inner current set 0; gaps outer current set 0
+bindsym $mod+Shift+Control+m gaps inner all set 0; gaps outer all set 0
 bindsym $mod+comma gaps inner current plus 2
+bindsym $mod+Control+comma gaps inner all plus 2
 bindsym $mod+Shift+comma gaps inner current minus 2
+bindsym $mod+Shift+Control+comma gaps inner all minus 2
 bindsym $mod+period gaps outer current plus 2
+bindsym $mod+Control+period gaps outer all plus 2
 bindsym $mod+Shift+period gaps outer current minus 2
+bindsym $mod+Shift+Control+period gaps outer all minus 2
+#
+#
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+bindsym $mod+Shift+g mode "$mode_gaps"
+
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+mode "$mode_gaps_inner" {
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+
+        bindsym Shift+plus  gaps inner all plus 5
+        bindsym Shift+minus gaps inner all minus 5
+        bindsym Shift+0     gaps inner all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_outer" {
+        bindsym plus  gaps outer current plus 5
+        bindsym minus gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+
+        bindsym Shift+plus  gaps outer all plus 5
+        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+0     gaps outer all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+#
+#
+#screen brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
+bindsym $mod+XF86MonBrightnessUp exec xbacklight -set 30% # decrease screen brightness
+#volume control
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% 
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym $mod+XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 30% 
+#####################################################################################################
+#select display screens
+bindsym $mod+F10 exec --no-startup-id "dcdisplay"
+#printscreen functions
+bindsym --release Print exec --no-startup-id scrot -e 'mv $f ~/img/screenshots/'
+bindsym --release Shift+Print exec --no-startup-id scrot -u -e 'mv $f ~/img/screenshots/'
+bindsym --release Control+Print exec --no-startup-id scrot -s -e 'mv $f ~/img/screenshots/'
+#file managers:
+bindsym $mod+Shift+p exec pcmanfm
+bindsym $mod+p exec urxvt -e ranger
+#editors:
+bindsym $mod+o exec urxvt -e vim
+#system monitor
+bindsym $mod+i exec urxvt -e htop
+#calculator
+bindsym $mod+y exec speedcrunch
+#bindsym $mod+y exec gnome-calculator
+#bindsym $mod+Shift+Return exec termite -e zsh
+bindsym $mod+Shift+a exec pavucontrol
+#hiding window into sratchpad workspace
+# move the currently focused window to the scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $mod+minus [instance="^(?!dropdown).*$"] scratchpad show;floating disable
+
+#screen and workspace
+set $firstscreen eDP1
+set $secondscreen VGA1
+#
+workspace 1 output $firstscreen
+workspace 2 output $secondscreen
+workspace 3 output $firstscreen
+workspace 4 output $secondscreen
+workspace 5 output $firstscreen
+workspace 6 output $secondscreen
+workspace 7 output $firstscreen
+workspace 8 output $secondscreen
+workspace 9 output $firstscreen
+workspace 10 output $secondscreen
+
+# next/previous workspace
+
+bindsym Mod1+Tab workspace next
+bindsym Mod1+Shift+Tab workspace prev
+bindsym $mod+Tab workspace back_and_forth
+
+#navigate workspaces next / previous
+bindsym Mod1+Ctrl+Right workspace next
+bindsym Mod1+Ctrl+Left workspace prev
+
+#adding new blank workspace
+bindsym $mod+z exec --no-startup-id empty.sh
