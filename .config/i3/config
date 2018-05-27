@@ -230,17 +230,17 @@ bindsym $mod+p exec "pavucontrol"
 #
 bindsym $mod+F10 exec --no-startup-id "dcdisplay"
 #
-bindsym $mod+F1 exec firefox -P dcmc
-bindsym $mod+Shift+F1 exec firefox -private-window -profile dcmc
+bindsym $mod+b exec firefox -P dcmc
+bindsym $mod+Shift+b exec firefox -private-window -profile dcmc
 #
-bindsym $mod+F2 exec urxvt -e ranger
-bindsym $mod+Shift+F2 exec pcmanfm
+bindsym $mod+x exec urxvt -e ranger
+bindsym $mod+Shift+x exec pcmanfm
 #
-bindsym $mod+F3 exec urxvt -e vim
+bindsym $mod+t exec urxvt -e vim
 #
-bindsym $mod+F4 exec urxvt -e htop
+bindsym $mod+F1 exec urxvt -e htop
 #
-bindsym $mod+F5 exec speedcrunch
+bindsym $mod+F2 exec speedcrunch
 #
 #END_OF_KEYBINDINGS
 #power managment
@@ -260,9 +260,12 @@ mode "$mode_system" {
 }
 bindsym $mod+Escape mode "$mode_system"
 #END_OF_POWER_MANAGMENT
+#
+#GAPS_SIZE
 bindsym $mod+m gaps inner current set 3; gaps outer current set 3
 bindsym $mod+Shift+m gaps inner current set 0; gaps outer current set 0
 bindsym $mod+comma gaps inner current plus 2
 bindsym $mod+Shift+comma gaps inner current minus 2
 bindsym $mod+period gaps outer current plus 2
 bindsym $mod+Shift+period gaps outer current minus 2
+#GAPS_SIZE_END
