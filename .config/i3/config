@@ -218,8 +218,8 @@ bindsym --release Print exec --no-startup-id scrot -e 'mv $f ~/img/screenshots/'
 bindsym --release Shift+Print exec --no-startup-id scrot -u -e 'mv $f ~/img/screenshots/'
 bindsym --release Control+Print exec --no-startup-id scrot -s -e 'mv $f ~/img/screenshots/'
 #
-bindsym $mod+Shift+u exec urxvt -name dropdown -e tmux
-bindsym $mod+u [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
+bindsym $mod+Shift+grave exec urxvt -name dropdown -e tmux
+bindsym $mod+grave [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
 #
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus [instance="^(?!dropdown).*$"] scratchpad show;floating disable
