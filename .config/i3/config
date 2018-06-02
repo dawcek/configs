@@ -179,7 +179,7 @@ exec --no-startup-id dunst &
 exec --no-startup-id low_battery.sh &
 exec --no-startup-id urxvt -name dropdown -e tmux
 for_window [instance="dropdown"] floating enable
-for_window [instance="dropdown"] resize set 900 700
+for_window [instance="dropdown"] resize set 1200 700
 for_window [instance="dropdown"] move scratchpad
 for_window [instance="dropdown"] border pixel 5
 #END_OF_STARTUP
