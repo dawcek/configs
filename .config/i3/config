@@ -233,8 +233,8 @@ bindsym $mod+F10 exec --no-startup-id "dcdisplay"
 bindsym $mod+b exec firefox -P dcmc
 bindsym $mod+Shift+b exec firefox -private-window -profile dcmc
 #
-bindsym $mod+x exec urxvt -e ranger
-bindsym $mod+Shift+x exec pcmanfm
+bindsym $mod+z exec urxvt -e ranger
+bindsym $mod+Shift+z exec pcmanfm
 #
 bindsym $mod+t exec urxvt -e vim
 #
