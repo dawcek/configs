@@ -1,8 +1,8 @@
 URxvt.depth:		32
 URxvt.scrollBar:	false
 URxvt.cursorColor:	white
-URxvt.font: xft:bitstream vera sans mono:size=14:antialias=true
-URxvt.boldFont: xft:bitstream vera sans mono:bold:size=14:antialias=true
+URxvt.font: xft:bitstream vera sans mono:size=12:antialias=true
+URxvt.boldFont: xft:bitstream vera sans mono:bold:size=12:antialias=true
 URxvt.perl-ext-common:	default,matcher,resize-font,clipboard,keyboard-select
 ! keyboard-select
 URxvt.keysym.M-s: perl:keyboard-select:activate
@@ -20,41 +20,40 @@ URxvt.resize-font.bigger: C-Up
 URxvt.resize-font.reset: C-Left
 URxvt.resize-font.show: C-Right
 
-! ~/.Xresource
 ! special
-*.foreground:   #f5f5f5
-*.background:   #002b36
-*.cursorColor:  #93a1a1
+*.foreground:   #66ff66
+*.background:   [85]#101010
+*.cursorColor:  #66ff66
 
 ! black
-*.color0:       #002b36
-*.color8:       #657b83
+*.color0:       #1c1c1c
+*.color8:       #4d4d4d
 
 ! red
-*.color1:       #dc322f
-*.color9:       #dc322f
+*.color1:       #d81860
+*.color9:       #f00060
 
 ! green
-*.color2:       #859900
-*.color10:      #859900
+*.color2:       #60ff60
+*.color10:      #70ff70
 
 ! yellow
-*.color3:       #b58900
-*.color11:      #b58900
+*.color3:       #f9fd75
+*.color11:      #f9fd80
 
 ! blue
-*.color4:       #268bd2
-*.color12:      #268bd2
+*.color4:       #4695c8
+*.color12:      #5a9dc8
 
 ! magenta
-*.color5:       #6c71c4
-*.color13:      #6c71c4
+*.color5:       #a78edb
+*.color13:      #b29fdb
 
 ! cyan
-*.color6:       #2aa198
-*.color14:      #2aa198
+*.color6:       #43afce
+*.color14:      #69b8ce
 
 ! white
-*.color7:       #93a1a1
-*.color15:      #fdf6e3
+*.color7:       #f3ebe2
+*.color15:      #eeeeee
 
