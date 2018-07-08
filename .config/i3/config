@@ -242,6 +242,10 @@ bindsym $mod+F1 exec urxvt -e htop
 #
 bindsym $mod+F2 exec speedcrunch
 #
+bindsym $mod+F3 exec pia.sh
+#
+bindsym $mod+F4 exec redshift-gtk
+#
 #END_OF_KEYBINDINGS
 #power managment
 set $question "Are you sure?"
