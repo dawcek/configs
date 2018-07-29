@@ -50,8 +50,6 @@ cgmanager
 coreutils
 cpio
 cryptsetup
-cups
-cups-filters
 cyrus-sasl
 db48
 dbus
@@ -401,7 +399,6 @@ rpcbind
 rsync
 samba
 sbc
-screen
 sdl
 seamonkey-solibs
 sed
