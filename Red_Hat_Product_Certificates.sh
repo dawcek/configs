@@ -1,0 +1,53 @@
+# Create directory /etc/pki/product/.
+mkdir -p /etc/pki/product/
+
+# Write the certificate.
+cat << EOF >> /etc/pki/product/70.pem
+-----BEGIN CERTIFICATE-----
+MIIGHzCCBAegAwIBAgIJALDxRLt/tVBtMA0GCSqGSIb3DQEBBQUAMIGuMQswCQYD
+VQQGEwJVUzEXMBUGA1UECAwOTm9ydGggQ2Fyb2xpbmExFjAUBgNVBAoMDVJlZCBI
+YXQsIEluYy4xGDAWBgNVBAsMD1JlZCBIYXQgTmV0d29yazEuMCwGA1UEAwwlUmVk
+IEhhdCBFbnRpdGxlbWVudCBQcm9kdWN0IEF1dGhvcml0eTEkMCIGCSqGSIb3DQEJ
+ARYVY2Etc3VwcG9ydEByZWRoYXQuY29tMB4XDTE4MDQxMDE5MTIxMVoXDTM4MDQw
+NTE5MTIxMVowRDFCMEAGA1UEAww5UmVkIEhhdCBQcm9kdWN0IElEIFs3NGQ0MWJm
+Yy04ODM5LTQyY2QtOTA3MC1kZTY1MDZhNDhiYjBdMIICIjANBgkqhkiG9w0BAQEF
+AAOCAg8AMIICCgKCAgEAxj9J04z+Ezdyx1U33kFftLv0ntNS1BSeuhoZLDhs18yk
+sepG7hXXtHh2CMFfLZmTjAyL9i1XsxykQpVQdXTGpUF33C2qBQHB5glYs9+d781x
+8p8m8zFxbPcW82TIJXbgW3ErVh8vk5qCbG1cCAAHb+DWMq0EAyy1bl/JgAghYNGB
+RvKJObTdCrdpYh02KUqBLkSPZHvo6DUJFN37MXDpVeQq9VtqRjpKLLwuEfXb0Y7I
+5xEOrR3kYbOaBAWVt3mYZ1t0L/KfY2jVOdU5WFyyB9PhbMdLi1xE801j+GJrwcLa
+xmqvj4UaICRzcPATP86zVM1BBQa+lilkRQes5HyjZzZDiGYudnXhbqmLo/n0cuXo
+QBVVjhzRTMx71Eiiahmiw+U1vGqkHhQNxb13HtN1lcAhUCDrxxeMvrAjYdWpYlpI
+yW3NssPWt1YUHidMBSAJ4KctIf91dyE93aStlxwC/QnyFsZOmcEsBzVCnz9GmWMl
+1/6XzBS1yDUqByklx0TLH+z/sK9A+O2rZAy1mByCYwVxvbOZhnqGxAuToIS+A81v
+5hCjsCiOScVB+cil30YBu0cH85RZ0ILNkHdKdrLLWW4wjphK2nBn2g2i3+ztf+nQ
+ED2pQqZ/rhuW79jcyCZl9kXqe1wOdF0Cwah4N6/3LzIXEEKyEJxNqQwtNc2IVE8C
+AwEAAaOBqDCBpTAJBgNVHRMEAjAAMEoGCysGAQQBkggJAUYBBDsMOVJlZCBIYXQg
+RW50ZXJwcmlzZSBMaW51eCBTZXJ2ZXIgLSBFeHRlbmRlZCBVcGRhdGUgU3VwcG9y
+dDAUBgsrBgEEAZIICQFGAgQFDAM3LjUwFwYLKwYBBAGSCAkBRgMECAwGeDg2XzY0
+MB0GCysGAQQBkggJAUYEBA4MDHJoZWwscmhlbDcuNTANBgkqhkiG9w0BAQUFAAOC
+AgEAoQDeSy0pygwPx/hlWsBGp8ywEn57vbo1mQH9lBGjsF/LHAA5chdXo2h/qZK9
+h3c2mCtcxbGsYXlJsyKIpkoDrscOwKU1ceAz4pPqZS5nQ7G7Qf4hwgq+p74Qud7a
+AESgvYGmQIDgGMAlXM1tyc23bTbC7ZEpg9GnG7TEDMkTU/rAQzZBdzTclK27wfS3
+TSyZSr8vUSU9mOhC3O2xd3tUmnI9U5+YfQbzMrF1qXlExlvWpuTmSEaCGAYJHo/s
+vRCC7Ctw2BGTngwQLJ1DmHKvxjddVqm8ItY/iuXlEIWnNWa8HBsqhBQ72xJkS1/R
+gh+hwuq9b0xp7ACEI/EM/TTkFX3ECv6Nhl+Qe0snpS9s6HpGZpozPQnLKDsLjcdg
+22LW0coZ188qubQs5smg8wIr9vEstTpwYonUSOkH+4YybhcdK4IrDBQOKcRBQQvk
++QF6TTsTny/Ry15Z8RVXMNb/Zl5cSr1L5C1ZWd89G5fSPBmW50gDxnuIoWUZ7OKc
+48WplW5aM2NA22lg1mu7U/H2lucIHaeoDYsh23cY/dCQhkXAfkbUB+SxcZg9HJ5m
+LQq9fb5nQhryvVx6OJdMBNoqR+pcM67QO3QHrZLctlkxtcA9qIYK0kQBVMmG4USu
+yrv8tFeI+ouGiqokE/MjBMdMOJaHuvdy6cUTZFcHxuD69UA=
+-----END CERTIFICATE-----
+
+EOF
+
+# Change the permission and ownership of this file.
+restorecon -Rv /etc/pki/product
+chown root.root /etc/pki/product/70.pem
+chmod 644 /etc/pki/product/70.pem
+rct cat-cert /etc/pki/product/70.pem
+
+# Register your system.
+subscription-manager register --auto-attach
+subscription-manager refresh
+subscription-manager identity
