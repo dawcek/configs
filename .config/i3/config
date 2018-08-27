@@ -230,17 +230,17 @@ bindsym $mod+p exec "pavucontrol"
 #
 bindsym $mod+F10 exec --no-startup-id "dcdisplay"
 #
-bindsym $mod+b exec firefox -P dcmc
-bindsym $mod+Shift+b exec firefox -private-window -profile dcmc
+bindsym $mod+b exec firefox-esr -P dcmc
+bindsym $mod+Shift+b exec firefox-esr -private-window -profile dcmc
 #
-bindsym $mod+z exec urxvt -e ranger
-bindsym $mod+Shift+z exec pcmanfm
+bindsym $mod+z exec exec pcmanfm 
+bindsym $mod+Shift+z urxvt -e ranger
 #
 bindsym $mod+t exec urxvt -e vim
 #
 bindsym $mod+F1 exec urxvt -e htop
 #
-bindsym $mod+F2 exec speedcrunch
+bindsym $mod+F2 exec gnome-calculator
 #
 bindsym $mod+F3 exec pia.sh
 #
