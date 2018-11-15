@@ -3,8 +3,6 @@ Cython
 GConf
 LibRaw
 Mako
-ModemManager
-NetworkManager
 SDL2
 SDL2_gfx
 SDL2_image
@@ -346,7 +344,6 @@ net-tools
 netkit-ftp
 netkit-routed
 nettle
-network-manager-applet
 network-scripts
 newt
 nfs-utils
